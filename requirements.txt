@@ -1,0 +1,6 @@
+python-telegram-bot>=21.0,<22.0
+yt-dlp
+python-dotenv>=1.0,<2.0
+google-api-python-client>=2.0,<3.0
+google-auth>=2.0,<3.0
+google-auth-oauthlib>=1.2,<2.0

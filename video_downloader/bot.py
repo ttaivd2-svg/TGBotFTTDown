@@ -743,6 +743,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
 
 def main() -> None:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
     if not BOT_TOKEN:
         raise RuntimeError("BOT_TOKEN is missing. Add it to the .env file.")
     if not DRIVE_SERVICE:

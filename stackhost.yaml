@@ -10,8 +10,8 @@ runtime:
 
 commands:
   build:
-    - cd video_downloader && pip install -r requirements.txt
-  start: cd video_downloader && python bot.py
+    - pip install -r requirements.txt
+  start: python video_downloader/bot.py
 
 repository:
   branch: main

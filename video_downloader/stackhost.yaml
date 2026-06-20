@@ -1,0 +1,23 @@
+# StackHost configuration file
+# Version: 2.0.0
+
+user:
+  name: ttaivd2-svg
+  github: ttaivd2-svg
+
+runtime:
+  image: python:3.11-slim
+
+commands:
+  build:
+    - pip install -r requirements.txt
+  start: python bot.py
+
+repository:
+  branch: main
+  auto_deploy: true
+
+env:
+  - PYTHON_VERSION:3.11.9
+  - DOWNLOAD_DIR:/tmp/tiktok-videos
+  - RETRY_DELAYS_SECONDS:300,900,1800

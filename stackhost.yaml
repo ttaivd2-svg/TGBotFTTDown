@@ -11,7 +11,7 @@ runtime:
 commands:
   build:
     - pip install -r requirements.txt
-  start: python video_downloader/bot.py
+  start: python bot.py
 
 repository:
   branch: main

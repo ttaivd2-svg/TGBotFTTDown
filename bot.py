@@ -23,21 +23,21 @@ def main() -> None:
 
     s.DOWNLOAD_DIR.mkdir(parents=True, exist_ok=True)
     up.sync_state_from_drive()
-    # hs.start_health_server()
+    hs.start_health_server()
 
     application = Application.builder().token(s.BOT_TOKEN).build()
     application.add_handler(MessageHandler(filters.ALL, mh.handle_message))
 
     hs.logger.info("Bot started. Temporary download directory: %s", s.DOWNLOAD_DIR)
     hs.logger.info("Google Drive upload: enabled")
-    # application.run_polling(allowed_updates=Update.ALL_TYPES)
-    application.run_webhook(
-        listen="0.0.0.0", 
-        port=s.PORT,
-        url_path=s.BOT_TOKEN,
-        webhook_url=f"{s.WEBHOOK_URL}/{s.BOT_TOKEN}",
-        allowed_updates=Update.ALL_TYPES,
-        )
+    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    # application.run_webhook(
+    #     listen="0.0.0.0", 
+    #     port=s.PORT,
+    #     url_path=s.BOT_TOKEN,
+    #     webhook_url=f"{s.WEBHOOK_URL}/{s.BOT_TOKEN}",
+    #     allowed_updates=Update.ALL_TYPES,
+    #     )
 
 if __name__ == "__main__":
     main()

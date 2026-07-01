@@ -32,12 +32,12 @@ def main() -> None:
     hs.logger.info("Google Drive upload: enabled")
     # application.run_polling(allowed_updates=Update.ALL_TYPES)
     application.run_webhook(
-        listen="0.0.0.0", 
+        listen="0.0.0.0",
         port=s.PORT,
-        url_path=s.BOT_TOKEN,
-        webhook_url=f"{s.WEBHOOK_URL}/{s.BOT_TOKEN}",
+        url_path="webhook",
+        webhook_url=f"{s.WEBHOOK_URL}/webhook",
         allowed_updates=Update.ALL_TYPES,
-        )
+    )
 
 if __name__ == "__main__":
     main()
